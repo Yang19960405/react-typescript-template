@@ -1,14 +1,19 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import {Button} from 'antd';
+import {Provider} from 'react-redux';
 import './index.css';
-import App from './App';
+import {store} from "./redux/store";
+import App from './layouts/LeftNavigation';
 import reportWebVitals from './reportWebVitals';
+import 'antd/dist/antd.css'
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  <Provider store={store}>
+    <React.StrictMode>
+        <App />
+    </React.StrictMode>
+  </Provider>,
   document.getElementById('root')
 );
 
