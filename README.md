@@ -45,6 +45,17 @@ You can learn more in the [Create React App documentation](https://facebook.gith
 
 To learn React, check out the [React documentation](https://reactjs.org/).
 
+## 技术点
+- react
+- redux
+- redux-saga
+- antd
+- mock  `npm i --save-dev @types/mockjs`
+- axios
+- i18n
+- typescript
+- craco 在不暴露webpack的情况下进行webpack的配置 `npm install @craco/craco --save`
+
 ## UI框架集成antd
 如果是npm构建的项目输入命令 `npm install antd` 安装antd<br/>
 如果是yarn构建的项目输入命令 `yarn add antd` 安装antd
@@ -53,3 +64,7 @@ To learn React, check out the [React documentation](https://reactjs.org/).
 
 ## MarkDown插件
 Markdown All in One  直接安装即可使用
+
+## Mock
+#### mock文档
+http://mockjs.com/examples.html

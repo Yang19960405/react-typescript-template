@@ -1,16 +1,12 @@
 import * as ActionType from '../actionType';
+import {IAction} from '../actionType';
 import {combineReducers} from 'redux';
-
-interface IUserInfoAction{
-    type: string;
-    [key:string]:any;
-}
 
 const initialState = {
     name:"aaa",
 };
 
-const userInfo = (state = initialState,action: IUserInfoAction) => {
+const userInfo = (state = initialState,action: IAction) => {
     switch(action.type){
         case ActionType.USERINFO_UPDATE: return {name: "BBB"};
         default: return state;

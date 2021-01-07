@@ -6,3 +6,4 @@ const initState: {[key:string]:any} = {}
 export const store = createStore(rootReducer,initState,applyMiddleware(
     
 ));
+

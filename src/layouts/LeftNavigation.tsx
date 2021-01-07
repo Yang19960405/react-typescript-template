@@ -2,6 +2,7 @@ import React from 'react';
 import {Layout,Button} from 'antd';
 import { connect } from "react-redux";
 import * as ActionType from "../redux/actionType";
+import { ReducerType } from "../redux/rootReducer";
 
 
 
@@ -22,7 +23,7 @@ class LeftNavigation extends React.Component<any,any>{
     }
 }
 
-const mapStateToProps = (state:any) => {
+const mapStateToProps = (state:ReducerType) => {
     return{
         value: state.userReducer.userInfo.name
     }
