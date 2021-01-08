@@ -11,6 +11,10 @@ export const leftMenu = {
     GET_MENUDATA: "GET_MENUDATA",
 }
 
+export const layout = {
+    UPDATA_COLLAPSED: "UPDATA_COLLAPSED",
+}
+
 /***
  * 定义通用Action类型
  */

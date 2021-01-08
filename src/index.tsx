@@ -28,15 +28,7 @@ ReactDOM.render(
       <BrowserRouter>
         <Switch>
           <Route path="/login" component={Login}/>
-          <Route path="/" component={() =>  (
-  <>
-    <Button type = "default">TEsts</Button>
-    <App>
-      <Route path="/login1" component={Login}/>
-    </App>
-    
-  </>
-) } />
+          <Route path="/" component={() => indexPage11} />
         </Switch>
         
       </BrowserRouter>
