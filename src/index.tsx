@@ -8,17 +8,45 @@ import App from './layouts/LeftNavigation';
 import Login from "./containers/Login/Login";
 import reportWebVitals from './reportWebVitals';
 import 'antd/dist/antd.css';
+import {Router } from 'react-router';
+import { BrowserRouter, Route, Switch } from "react-router-dom";
 import Mock from "mockjs";//使用接口时需要注释此引用
+
+const indexPage11 = (
+  <>
+    <Button type = "default">TEsts</Button>
+    <App>
+      <Route path="/login1" component={Login}/>
+    </App>
+    
+  </>
+)
 
 ReactDOM.render(
   <Provider store={store}>
     <React.StrictMode>
-        <App />
-        <Login/>
+      <BrowserRouter>
+        <Switch>
+          <Route path="/login" component={Login}/>
+          <Route path="/" component={() =>  (
+  <>
+    <Button type = "default">TEsts</Button>
+    <App>
+      <Route path="/login1" component={Login}/>
+    </App>
+    
+  </>
+) } />
+        </Switch>
+        
+      </BrowserRouter>
     </React.StrictMode>
   </Provider>,
   document.getElementById('root')
 );
+
+
+
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))

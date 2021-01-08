@@ -49,6 +49,7 @@ To learn React, check out the [React documentation](https://reactjs.org/).
 - react
 - redux
 - redux-saga
+- react-router `npm i --save-dev @types/react-router`  `npm i --save-dev @types/react-router-dom`
 - antd
 - mock  `npm i --save-dev @types/mockjs`
 - axios

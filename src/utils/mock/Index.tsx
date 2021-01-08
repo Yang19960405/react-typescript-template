@@ -8,7 +8,23 @@ export const data = Mock.mock(`${host}/login/login`,"post", function(){
             "TokenID":'@guid'
         } 
     })
-    
+});
+
+export const data2 = Mock.mock(`${host}/menu/data`,"get", function(){
+    return Mock.mock({
+        "isSuccess|1":true,
+        "data|3-4":[{
+            "key": "@string",
+            "value": "@ctitle(3, 5)",
+            "url": "@url()",
+            "items|3-4":[{
+                "key": "@string",
+                "value": "@ctitle(3, 5)",
+                "url": "@url()",
+                "items": []
+            }]
+        }]
+    })
 });
 
 // const fs = require('fs')

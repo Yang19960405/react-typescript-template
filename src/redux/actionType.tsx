@@ -7,6 +7,9 @@ export const LOGIN_ADD = 'LOGIN_ADD';
 export const LOGIN_UPDATE = 'LOGIN_UPDATE';
 export const LOGIN_SET_USERPASS = 'LOGIN_SET_USERPASS';
 
+export const leftMenu = {
+    GET_MENUDATA: "GET_MENUDATA",
+}
 
 /***
  * 定义通用Action类型
