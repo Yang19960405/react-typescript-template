@@ -18,7 +18,7 @@ const LeftNavigation = (e:IProp) =>{
     return (
         <>
             <Menu
-                style={{ width: 256 }}
+                style={{ width: '100%' }}
                 defaultOpenKeys={['sub1']}
                 mode="inline"
             >
@@ -42,7 +42,6 @@ const LeftNavigation = (e:IProp) =>{
                     })
                 }
             </Menu>
-            {e.children}
         </>
     )
 }

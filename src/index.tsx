@@ -4,17 +4,16 @@ import {Button} from 'antd';
 import {Provider} from 'react-redux';
 import './index.css';
 import {store} from "./redux/store";
-import App from './layouts/LeftNavigation';
+import App from './layouts/Layout';
 import Login from "./containers/Login/Login";
 import reportWebVitals from './reportWebVitals';
-import 'antd/dist/antd.css';
+import 'antd/dist/antd.less';
 import {Router } from 'react-router';
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import Mock from "mockjs";//使用接口时需要注释此引用
 
 const indexPage11 = (
   <>
-    <Button type = "default">TEsts</Button>
     <App>
       <Route path="/login1" component={Login}/>
     </App>

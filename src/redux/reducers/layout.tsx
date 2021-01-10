@@ -15,7 +15,7 @@ const initialState:LayoutModel = {
 
 const layoutInfo = (state = initialState, action:IAction) => {
     switch(action.type){
-        case ActionType.layout.UPDATA_COLLAPSED: return{ ...state, collapsed: action.collapsed};
+        case ActionType.layout.UPDATA_COLLAPSED: return{ ...state, collapsed: !state.collapsed};
         default: return state;
     }
 }

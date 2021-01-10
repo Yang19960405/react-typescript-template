@@ -7,6 +7,7 @@ import { host } from "../config";
 import Axios from "axios";
 import { MenuUnfoldOutlined,MenuFoldOutlined,} from '@ant-design/icons';
 import LeftNavigation from "./LeftNavigation";
+import { updataCollapsed } from "../redux/actions/layout";
 
 export interface IProp{
     children:any;
@@ -20,7 +21,9 @@ const AppLayout = (e:IProp) =>{
         <>
             <Layout>
                 <Sider trigger={null} collapsible collapsed={e.collapsed}>
-                <div className="logo" />
+                <div className="logo">
+                    <img src = "/images/logo.png" width = {200} height={64}/>
+                </div>
                 <LeftNavigation/>
                 </Sider>
                 <Layout className="site-layout">
@@ -48,7 +51,7 @@ const AppLayout = (e:IProp) =>{
 
 const mapDispatchToProps = (dispatch:any,ownProps:any) =>{
     return{
-        
+        toggle: () => dispatch(updataCollapsed())
     }
 }
 
