@@ -1,13 +1,16 @@
 import React from "react";
-import { Form, Input, Button, Checkbox } from "antd";
+import { Form, Input, Button, Checkbox, message } from "antd";
 import { UserOutlined, LockOutlined } from '@ant-design/icons';
 import "./Login.less";
 import { ILogin } from "./IndexCont";
+import PickerButton from "antd/lib/date-picker/PickerButton";
+import Axios from 'axios';
+import { host } from "../../config";
 
 const LoginView = (e:ILogin) => {
+
     const [form] = Form.useForm();
 
-    //onFinish={() => {e.loginSubmit(this.props.loginName,this.props.loginPass)}}
     return(
         <>
             <div className = "login-body">
@@ -16,6 +19,9 @@ const LoginView = (e:ILogin) => {
                     form = {form}
                     name="normal_login"
                     className="login-form"
+                    onFinish = {values => {
+                        e.loginSubmit(values.username,values.password);
+                    }}
                 >
                     <Form.Item
                     name="username"
