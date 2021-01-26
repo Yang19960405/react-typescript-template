@@ -20,7 +20,9 @@ const LoginView = (e:ILogin) => {
                     name="normal_login"
                     className="login-form"
                     onFinish = {values => {
-                        e.loginSubmit(values.username,values.password);
+                        if(e.loginSubmit){
+                            e.loginSubmit(values.username,values.password);
+                        }
                     }}
                 >
                     <Form.Item

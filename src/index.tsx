@@ -4,32 +4,32 @@ import {Button} from 'antd';
 import {Provider} from 'react-redux';
 import './index.css';
 import {store} from "./redux/store";
-import App from './layouts/Layout';
-import Login from "./views/login/IndexCont";
+import App from "./router/Index";
 import reportWebVitals from './reportWebVitals';
 import 'antd/dist/antd.less';
-import {Router } from 'react-router';
-import { BrowserRouter, Route, Switch } from "react-router-dom";
 import Mock from "mockjs";//使用接口时需要注释此引用
 
-const indexPage11 = (
-  <>
-    <App>
-      <Route path="/logi" component={Login}/>
-    </App>
-  </>
-)
+/**
+ * 进入路由时触发
+ */
+const enterTab = () =>{
+  window.console.log("已执行");
+  return false;
+}
+/**
+ * 离开路由时触发
+ */
+const leaveTab = () =>{
+  window.console.log("");
+}
+
+const homePage = () =>{
+}
+
 
 ReactDOM.render(
   <Provider store={store}>
-    <React.StrictMode>
-      <BrowserRouter>
-        <Switch>
-          <Route path="/login" component={Login}/>
-          <Route path="/" component={() => indexPage11} />
-        </Switch>
-      </BrowserRouter>
-    </React.StrictMode>
+    <App></App>
   </Provider>,
   document.getElementById('root')
 );

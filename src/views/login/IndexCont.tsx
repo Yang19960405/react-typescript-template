@@ -56,11 +56,11 @@ const mapStateToProps = (state:ReducerType) => {
 }
 
 export interface ILogin{
-    loginName:string;
-    loginPass: string;
+    loginName?: string;
+    loginPass?: string;
     updataPassWord: (e:string) => void;
     updataUserName: (e:string) => void;
-    loginSubmit: (userName:string,passWord:string) => void;
+    loginSubmit ?: (userName:string,passWord:string) => void ;
 }
 
 export default connect(mapStateToProps,mapDispatchToProps)(LoginCont);
