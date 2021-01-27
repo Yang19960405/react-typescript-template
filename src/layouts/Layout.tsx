@@ -1,5 +1,5 @@
 import React from 'react';
-import {Layout,Button,Menu,Avatar,Row,Col,Dropdown } from 'antd';
+import {Layout,Button,Menu,Avatar,Row,Col,Dropdown,DatePicker } from 'antd';
 import { connect } from "react-redux";
 import * as ActionType from "../redux/actionType";
 import { ReducerType } from "../redux/rootReducer";
@@ -75,7 +75,7 @@ const AppLayout = (e:IProp) =>{
                     minHeight: 280,
                     }}
                 >
-                    Content
+                    <DatePicker></DatePicker>
                 </Content>
                 </Layout>
             </Layout>

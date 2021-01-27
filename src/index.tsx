@@ -1,35 +1,35 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {Button} from 'antd';
+import {ConfigProvider} from 'antd';
 import {Provider} from 'react-redux';
 import './index.css';
 import {store} from "./redux/store";
+import { connect } from "react-redux";
 import App from "./router/Index";
+import { ReducerType } from "./redux/rootReducer";
 import reportWebVitals from './reportWebVitals';
 import 'antd/dist/antd.less';
+import enUS from 'antd/lib/locale/en_US';
+import zhCN from 'antd/lib/locale/zh_CN';
+import moment from 'moment';
+import 'moment/locale/zh-cn';
 import Mock from "mockjs";//使用接口时需要注释此引用
 
-/**
- * 进入路由时触发
- */
-const enterTab = () =>{
-  window.console.log("已执行");
-  return false;
-}
-/**
- * 离开路由时触发
- */
-const leaveTab = () =>{
-  window.console.log("");
-}
+moment.locale('zh-cn');
 
-const homePage = () =>{
-}
+const Page = connect((e:ReducerType)=>{return{locale:e.userReducer.userInfo.name}})((e:any) =>{
+  window.console.log("store:",e);
+  return (
+    <ConfigProvider locale = {zhCN}>
+      <App></App>
+    </ConfigProvider>
+  )
+})
 
 
 ReactDOM.render(
   <Provider store={store}>
-    <App></App>
+    <Page/>
   </Provider>,
   document.getElementById('root')
 );
