@@ -15,6 +15,10 @@ export const layout = {
     UPDATA_COLLAPSED: "UPDATA_COLLAPSED",
 }
 
+export const setting = {
+    UPDATA_LOCALE: "UPDATA_LOCALE",
+}
+
 /***
  * 定义通用Action类型
  */
