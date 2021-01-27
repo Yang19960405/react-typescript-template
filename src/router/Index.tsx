@@ -5,20 +5,28 @@ import App from '../layouts/Layout';
 import Login from "../views/login/IndexCont";
 import { BrowserRouter, Route, Switch ,Redirect} from "react-router-dom";
 
-const indexPage11 = (
-    <>
-      <App>
-        <Route path="/logi"><Login/></Route>
-      </App>
-    </>
-)
+const HomePage = () =>{
+    if(localStorage.getItem("name") !== null){
+        return(
+            <>
+              <App>
+                <Route path="/logi"><Login/></Route>
+              </App>
+            </>
+        )
+    }else{
+        return(
+            <Redirect to = {{pathname:"/login"}}/>
+        )
+    }
+    
+} 
 
 // const PrivateRoute = ({ children, ...rest }) => {
 
 // }
 const LoginPage = () =>{
-    window.console.log(localStorage.getItem("name1"));
-    if(localStorage.getItem("name1") == null){
+    if(localStorage.getItem("name") == null){
         return(<Login/>)
     }else{
         return(
@@ -35,7 +43,9 @@ const Index = () =>{
                     <Route path="/login">
                         <LoginPage/>
                     </Route>
-                    <Route path="/"  component={() => {return indexPage11}} />
+                    <Route path="/">
+                        <HomePage/>
+                    </Route> 
                 </Switch>
             </BrowserRouter>
         </React.StrictMode>

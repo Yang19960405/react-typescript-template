@@ -20,7 +20,6 @@ const LoginCont = (e:ILogin) =>{
         if(ref.status === 200){
             if(ref.data.isSuccess){
                isSuccess = ref.data.isSuccess;
-               history.push("/");
             }
         }
         if(!isSuccess){
@@ -28,7 +27,7 @@ const LoginCont = (e:ILogin) =>{
         }else{
             message.success("登陆成功");
             localStorage.setItem("name",userName);
-            window.console.log(localStorage.getItem("name"));
+            history.push("/");
         }
     }
     return(<Login {...e} loginSubmit = {loginSubmit} ></Login>)
