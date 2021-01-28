@@ -8,19 +8,16 @@ import { connect } from "react-redux";
 import App from "./router/Index";
 import { ReducerType } from "./redux/rootReducer";
 import reportWebVitals from './reportWebVitals';
+import {getAntdLocale} from "./utils/i18n/index";
 import 'antd/dist/antd.less';
-import enUS from 'antd/lib/locale/en_US';
-import zhCN from 'antd/lib/locale/zh_CN';
 import moment from 'moment';
 import 'moment/locale/zh-cn';
+import 'moment/locale/es-us';
+
 import Mock from "mockjs";//使用接口时需要注释此引用
-
-moment.locale('zh-cn');
-
-const Page = connect((e:ReducerType)=>{return{locale:e.userReducer.userInfo.name}})((e:any) =>{
-  window.console.log("store:",e);
+const Page = connect((e:ReducerType)=>{return{locale:e.settingReducer.settingInfo.locale}})((e:any) =>{
   return (
-    <ConfigProvider locale = {zhCN}>
+    <ConfigProvider locale = {getAntdLocale(e.locale)}>
       <App></App>
     </ConfigProvider>
   )
