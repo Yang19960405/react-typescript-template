@@ -7,12 +7,12 @@ export interface SettingModel{
 }
 
 const initialState: SettingModel = {
-    locale: "en-us"
+    locale: "zh-cn"
 }
 
 const settingInfo = (state = initialState, action:IAction) =>{
     switch(action.type){
-        case ActionType.setting.UPDATA_LOCALE: return{ ...state, locale:action.locale};
+        case ActionType.setting.UPDATA_LOCALE: return{ ...state, locale:action.data};
         default: return state;
     }
 }

@@ -11,8 +11,6 @@ import reportWebVitals from './reportWebVitals';
 import {getAntdLocale} from "./utils/i18n/index";
 import 'antd/dist/antd.less';
 import moment from 'moment';
-import 'moment/locale/zh-cn';
-import 'moment/locale/es-us';
 
 import Mock from "mockjs";//使用接口时需要注释此引用
 const Page = connect((e:ReducerType)=>{return{locale:e.settingReducer.settingInfo.locale}})((e:any) =>{
